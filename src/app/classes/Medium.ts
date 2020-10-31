@@ -1,3 +1,10 @@
+export enum State {
+  LIKE = 'like',
+  UNSURE = 'unsure',
+  DISLIKE = 'dislike',
+  UNSET = 'unset'
+}
+
 export class Medium {
   type: 'tvshows' | 'movies';
   genres: string[];
