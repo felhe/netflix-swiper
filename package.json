@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
