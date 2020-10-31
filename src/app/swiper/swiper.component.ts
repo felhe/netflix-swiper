@@ -23,4 +23,8 @@ export class SwiperComponent implements OnInit {
   next(): void {
     this.currentIndex++;
   }
+
+  prev(): void {
+    this.currentIndex--;
+  }
 }
