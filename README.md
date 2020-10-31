@@ -1,27 +1,29 @@
-# NetflixUi
+# Netflix Swiper
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Can't decide what movie to watch? 
+A Tinder-like UI for browsing and liking movies and tv shows available on Netflix, 
+which helps you to find matches between you and your friends.
 
-## Development server
+## Data
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Currently, the app uses samples and no real data. In the future it will query a corresponding API (work-in-progress).
 
-## Code scaffolding
+A list of all movies/shows will be scraped from Netflix with details being fetched from [TMDb](https://www.themoviedb.org/documentation/api).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Roadmap
 
-## Build
+Features that are planned / not implemented yet:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Algorithm for calculating matches / displaying matches
+- Persist state (localStorage etc.)
+- Filter/sort available movies/tv shows by genres or rating
+- Watch trailer/teaser
+- Mobile optimization
+- Real-time cross-device support (WebRTC?)
+- More streaming services (Prime Video...)
 
-## Running unit tests
+## Development
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This app is built with Angular and [NG-ZORRO](https://github.com/NG-ZORRO/ng-zorro-antd).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+After cloning run ``npm i`` and ``npm start`` to serve the app locally.
