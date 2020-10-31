@@ -5,7 +5,7 @@ import { User } from '../../classes/User';
   providedIn: 'root'
 })
 export class UserService {
-  users: User[];
+  users: User[] = [];
 
   constructor() {}
 
