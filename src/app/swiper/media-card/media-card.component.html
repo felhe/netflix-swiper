@@ -12,7 +12,8 @@
     </a>
   </ng-template>
   <ng-template #cover>
-    <img [src]="'https://image.tmdb.org/t/p/w1280/' + medium.backdrop_path" alt="Cover">
+    <nz-skeleton-element *ngIf="imageLoading" [nzActive]="imageLoading" nzType="image"></nz-skeleton-element>
+    <img [hidden]="imageLoading" [src]="'https://image.tmdb.org/t/p/w1280/' + medium.backdrop_path" alt="Cover" (load)="imageLoading = false">
   </ng-template>
   <h3>Summary:</h3>
   <p nz-typography [nzContent]="medium.overview" nzExpandable nzEllipsis nzEllipsisRows="3">{{ medium.overview }}</p>
