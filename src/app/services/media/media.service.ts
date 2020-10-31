@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Medium } from '../swiper/classes/Medium';
+import { Medium } from '../../classes/Medium';
 
 @Injectable({
   providedIn: 'root'

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import { MediaService } from "../services/media.service";
-import { Medium } from "./classes/Medium";
+import { MediaService } from "../services/media/media.service";
+import { Medium } from "../classes/Medium";
 
 @Component({
   selector: "app-swiper",
