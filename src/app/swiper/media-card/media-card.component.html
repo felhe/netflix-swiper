@@ -1,0 +1,24 @@
+<nz-card style="height: 100%" [nzTitle]="title" [nzCover]="cover" [nzExtra]="link">
+  <ng-template #title>
+    {{ medium.title }}
+    <nz-tag>{{ medium.type === 'movies' ? 'Movie' : 'TV show' }}</nz-tag>
+  </ng-template>
+  <ng-template #link>
+    <a [href]="'https://netflix.com' + medium.link">
+      <button nz-button nzType="link">
+        Open on Netflix
+        <i nz-icon nzType="link" nzTheme="outline"></i>
+      </button>
+    </a>
+  </ng-template>
+  <ng-template #cover>
+    <nz-skeleton-element *ngIf="imageLoading" [nzActive]="imageLoading" nzType="image"></nz-skeleton-element>
+    <img [hidden]="imageLoading" [src]="'https://image.tmdb.org/t/p/w1280/' + medium.backdrop_path" alt="Cover" (load)="imageLoading = false">
+  </ng-template>
+  <h3>Summary:</h3>
+  <p nz-typography [nzContent]="medium.overview" nzExpandable nzEllipsis nzEllipsisRows="3">{{ medium.overview }}</p>
+  <h3>Genres:</h3>
+  <div>
+    <nz-tag *ngFor="let genre of medium.genres">{{ genre }}</nz-tag>
+  </div>
+</nz-card>
