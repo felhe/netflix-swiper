@@ -15,7 +15,10 @@ export class AppComponent {
   user: User;
   media$: Observable<Medium[]>;
 
-  constructor(userService: UserService, mediaService: MediaService) {
+  constructor(
+    public userService: UserService,
+    private mediaService: MediaService
+  ) {
     this.user = userService.createUser('User');
     this.media$ = mediaService.getMedia();
   }
