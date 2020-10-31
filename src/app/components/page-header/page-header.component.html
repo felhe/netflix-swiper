@@ -2,7 +2,9 @@
   <span>Netflix Swiper</span>
   <div style="float: right">
     <nz-avatar-group style="vertical-align: middle">
-      <nz-avatar *ngFor="let user of users" [nzText]="user.name" nzSize="large"></nz-avatar>
+      <nz-avatar *ngFor="let user of users" [nzText]="user.name"
+                 nzSize="large" [class.active-avatar]="user.id === userService.currentUser.id">
+      </nz-avatar>
     </nz-avatar-group>
     <a nz-dropdown [nzDropdownMenu]="menu" style="vertical-align: middle; margin-left: 15px">
       Switch
