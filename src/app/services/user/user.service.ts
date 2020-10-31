@@ -5,12 +5,20 @@ import { User } from '../../classes/User';
   providedIn: 'root'
 })
 export class UserService {
+  users: User[];
+
   constructor() {}
 
   createUser(name: string): User {
     const user = new User();
-    user.id = 1;
+    // create likely unique number
+    user.id = Math.floor(new Date().valueOf() * Math.random());
     user.name = name;
+    this.users.push(user);
     return user;
+  }
+
+  deleteUser(id: number): void {
+    this.users = this.users.filter((u) => u.id !== id);
   }
 }
