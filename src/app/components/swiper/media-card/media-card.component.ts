@@ -1,5 +1,11 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from "@angular/core";
-import { Medium } from '../../classes/Medium';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges
+} from '@angular/core';
+import { Medium } from '../../../classes/Medium';
 
 @Component({
   selector: 'app-media-card',
