@@ -1,0 +1,46 @@
+<ng-container *ngIf="(media$ | async) as media">
+
+  <nz-row nzAlign="middle" style="width: 100%; padding-top: 30px" nzGutter="20">
+    <nz-col nzSpan="4" nzOffset="2">
+      <nz-row nzJustify="center">
+        <nz-col>
+          <button nz-button nzSize="large" nzShape="circle">
+            <i nz-icon nzType="left"></i>
+          </button>
+        </nz-col>
+      </nz-row>
+      <nz-row nzJustify="center">
+        <nz-col>
+          Back
+        </nz-col>
+      </nz-row>
+    </nz-col>
+    <nz-col nzSpan="12" style="height: 100%; max-width: 700px; margin: 0 auto;">
+      <app-media-card [medium]="media[currentIndex]"></app-media-card>
+    </nz-col>
+    <nz-col nzSpan="6">
+    </nz-col>
+  </nz-row>
+
+  <nz-row nzJustify="center" nzGutter="40" style="margin-top: 30px; width: 100%">
+    <nz-col>
+      <button nz-button nzSize="large" nzType="danger" (click)="next()">
+        <i nz-icon nzType="dislike"></i>
+        Dislike
+      </button>
+    </nz-col>
+    <nz-col>
+      <button nz-button nzSize="large" (click)="next()">
+        <i nz-icon nzType="question"></i>
+        Not sure
+      </button>
+    </nz-col>
+    <nz-col>
+      <button nz-button nzSize="large" nzType="primary" (click)="next()">
+        <i nz-icon nzType="like"></i>
+        Like
+      </button>
+    </nz-col>
+  </nz-row>
+
+</ng-container>
