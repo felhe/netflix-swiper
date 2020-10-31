@@ -1,4 +1,7 @@
-<nz-row nzAlign="middle" nzJustify="center" style="width: 100%; padding-top: 30px" nzGutter="20">
+<nz-row nzJustify="center" style="padding-top: 30px">
+  <nz-col>{{ currentIndex + 1 }} / {{ this.media.length }}</nz-col>
+</nz-row>
+<nz-row nzAlign="middle" nzJustify="center" style="width: 100%" nzGutter="20">
   <nz-col nzSpan="2">
     <button nz-button nzSize="large" nzShape="circle" (click)="prev()" style="float: right"
             *ngIf="currentIndex !== 0">
