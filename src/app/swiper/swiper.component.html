@@ -1,42 +1,29 @@
-<ng-container *ngIf="(media$ | async) as media">
+<nz-row nzJustify="center" style="padding-top: 30px">
+  <nz-col>{{ currentIndex + 1 }} / {{ this.media.length }}</nz-col>
+</nz-row>
+<nz-row nzAlign="middle" nzJustify="center" style="width: 100%" nzGutter="20">
+  <nz-col nzSpan="2">
+    <button nz-button nzSize="large" nzShape="circle" (click)="prev()" style="float: right"
+            *ngIf="currentIndex !== 0">
+      <i nz-icon nzType="left"></i>
+    </button>
+  </nz-col>
+  <nz-col style="height: 100%; max-width: 700px;">
+    <app-media-card [medium]="media[currentIndex]"></app-media-card>
+  </nz-col>
+  <nz-col nzSpan="2">
+    <button nz-button nzSize="large" nzShape="circle" (click)="next()"
+            *ngIf="currentIndex < media.length-1">
+      <i nz-icon nzType="right"></i>
+    </button>
+  </nz-col>
+</nz-row>
 
-  <nz-row nzAlign="middle" nzJustify="center" style="width: 100%; padding-top: 30px" nzGutter="20">
-    <nz-col nzSpan="2">
-      <button nz-button nzSize="large" nzShape="circle" (click)="prev()" style="float: right"
-             *ngIf="currentIndex !== 0">
-        <i nz-icon nzType="left"></i>
-      </button>
-    </nz-col>
-    <nz-col style="height: 100%; max-width: 700px;">
-      <app-media-card [medium]="media[currentIndex]"></app-media-card>
-    </nz-col>
-    <nz-col nzSpan="2">
-      <button nz-button nzSize="large" nzShape="circle" (click)="next()"
-              *ngIf="currentIndex < media.length-1">
-        <i nz-icon nzType="right"></i>
-      </button>
-    </nz-col>
-  </nz-row>
+<nz-row nzJustify="center" nzGutter="40" style="margin-top: 30px; width: 100%">
+  <nz-radio-group nzButtonStyle="solid" nzSize="large" [ngModel]="this.state" (ngModelChange)="setState($event)">
+    <label nz-radio-button [nzValue]="StateEnum.DISLIKE"><i nz-icon nzType="dislike"></i> Dislike</label>
+    <label nz-radio-button [nzValue]="StateEnum.UNSURE"><i nz-icon nzType="question"></i> Not sure</label>
+    <label nz-radio-button [nzValue]="StateEnum.LIKE"><i nz-icon nzType="like"></i> Like</label>
+  </nz-radio-group>
+</nz-row>
 
-  <nz-row nzJustify="center" nzGutter="40" style="margin-top: 30px; width: 100%">
-    <nz-col>
-      <button nz-button nzSize="large" nzType="danger" (click)="next()">
-        <i nz-icon nzType="dislike"></i>
-        Dislike
-      </button>
-    </nz-col>
-    <nz-col>
-      <button nz-button nzSize="large" (click)="next()">
-        <i nz-icon nzType="question"></i>
-        Not sure
-      </button>
-    </nz-col>
-    <nz-col>
-      <button nz-button nzSize="large" nzType="primary" (click)="next()">
-        <i nz-icon nzType="like"></i>
-        Like
-      </button>
-    </nz-col>
-  </nz-row>
-
-</ng-container>
