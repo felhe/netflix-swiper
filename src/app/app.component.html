@@ -1,2 +1,7 @@
-<app-swiper>
-</app-swiper>
+<nz-layout style="height: 100%;">
+  <app-page-header></app-page-header>
+  <nz-content>
+    <app-swiper [user]="userService.currentUser" [media]="media$ | async"></app-swiper>
+  </nz-content>
+</nz-layout>
+

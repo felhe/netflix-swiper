@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Medium } from '../swiper/classes/Medium';
+import { Medium } from '../../classes/Medium';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +37,7 @@ export class MediaService {
         image: '',
         region: 'de',
         title: 'Dolor Sit Amet',
-        id: 1,
+        id: 2,
         popularity: 100,
         vote_count: 10,
         vote_average: 10,
