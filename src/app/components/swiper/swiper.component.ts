@@ -5,8 +5,8 @@ import {
   OnInit,
   SimpleChanges
 } from '@angular/core';
-import { Medium, State } from '../classes/Medium';
-import { User } from '../classes/User';
+import { Medium, State } from '../../classes/Medium';
+import { User } from '../../classes/User';
 
 @Component({
   selector: 'app-swiper',
@@ -28,7 +28,9 @@ export class SwiperComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.user && changes.user.currentValue) {
-      console.log('User switched');
+      this.user = changes.user.currentValue;
+      this.currentIndex = 0;
+      this.updateStateView();
     }
   }
 
@@ -72,6 +74,5 @@ export class SwiperComponent implements OnInit, OnChanges {
         this.user.addDislike(this.media[this.currentIndex]);
         break;
     }
-    this.next();
   }
 }

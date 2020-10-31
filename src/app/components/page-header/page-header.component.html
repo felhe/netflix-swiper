@@ -1,0 +1,29 @@
+<nz-header>
+  <span>Netflix Swiper</span>
+  <div style="float: right">
+    <nz-avatar-group style="vertical-align: middle">
+      <nz-avatar *ngFor="let user of users" [nzText]="user.name"
+                 nzSize="large" [class.active-avatar]="user.id === userService.currentUser.id">
+      </nz-avatar>
+    </nz-avatar-group>
+    <a nz-dropdown [nzDropdownMenu]="menu" style="vertical-align: middle; margin-left: 15px">
+      Switch
+      <i nz-icon nzType="down"></i>
+    </a>
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+      <ul nz-menu nzMode="horizontal">
+        <li nz-menu-item *ngFor="let user of users" (click)="switchUser(user)"
+            [nzSelected]="user.id === userService.currentUser.id">
+          <i nz-icon nzType="user"></i>
+          {{ user.name }}
+        </li>
+        <li nz-menu-divider></li>
+        <li nz-menu-item (click)="addUser()">
+          <i nz-icon nzType="plus"></i>
+          Add user
+        </li>
+      </ul>
+    </nz-dropdown-menu>
+
+  </div>
+</nz-header>
